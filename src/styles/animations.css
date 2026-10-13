@@ -1,0 +1,140 @@
+@keyframes hero-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes console-settle {
+  0% {
+    opacity: 0;
+    transform: rotateY(-18deg) rotateX(12deg) translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(-9deg) rotateX(4deg);
+  }
+}
+
+@keyframes screen-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.975);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes field-appear {
+  0% {
+    opacity: 0.4;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes phone-drift {
+  0%,
+  to {
+    transform: translateY(0) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightbox-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.7s var(--ease-emphasized),
+    transform 0.7s var(--ease-emphasized);
+  transform: translateY(22px);
+}
+
+.reveal.is-visible,
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-in,
+.fade-up,
+.fade-down,
+.slide-left,
+.slide-right,
+.scale-reveal {
+  opacity: 0;
+  transition:
+    opacity var(--duration-slow) var(--ease-emphasized),
+    transform var(--duration-slow) var(--ease-emphasized);
+}
+
+.fade-up {
+  transform: translateY(22px);
+}
+.fade-down {
+  transform: translateY(-22px);
+}
+.slide-left {
+  transform: translateX(22px);
+}
+.slide-right {
+  transform: translateX(-22px);
+}
+.scale-reveal {
+  transform: scale(0.975);
+}
+
+.fade-in.is-visible,
+.fade-up.is-visible,
+.fade-down.is-visible,
+.slide-left.is-visible,
+.slide-right.is-visible,
+.scale-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.stagger > * {
+  transition-delay: calc(var(--stagger-index, 0) * 80ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
