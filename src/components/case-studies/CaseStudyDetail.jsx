@@ -31,44 +31,26 @@ const CaseStudyDetail = ({ study, related = [] }) => {
   return (
     <main className="case-studies-page">
       <Reveal as="section" className="case-hero">
-        <div className="case-hero-grid">
-          <div>
-            <div className="eyebrow blue">
-              {study.index ? `${study.index} / ` : ""}
-              {study.category}
-            </div>
-            <h1>{study.title}</h1>
-            <p>{study.description}</p>
-            <p style={{ marginTop: 14 }}>
-              <strong>{study.client}</strong>
-              {isDemo ? " · Demonstration / sample content" : ""}
-            </p>
-            <div
-              className="story-number"
-              style={{ marginTop: 22, padding: "18px 0" }}
-            >
-              {study.metric}
-              <small>{study.metricLabel}</small>
-            </div>
-            <Link
-              to="/case-studies"
-              className="text-button"
-              style={{ marginTop: 18, display: "inline-flex" }}
-            >
-              Back to case studies <span>+</span>
-            </Link>
+        <div className="case-hero-copy">
+          <div className="eyebrow blue">
+            {study.index ? `${study.index} / ` : ""}
+            {study.category}
           </div>
-          <div className="story-card story-0">
-            <span className="story-index">
-              {study.index || "—"} / {study.category}
-            </span>
-            <div className="story-number">
+          <h1>{study.title}</h1>
+          <p>{study.description}</p>
+          <p className="case-hero-client">
+            <strong>{study.client}</strong>
+            {isDemo ? " · Demonstration / sample content" : ""}
+          </p>
+          {study.metric || study.metricLabel ? (
+            <div className="case-hero-metric">
               {study.metric}
-              <small>{study.metricLabel}</small>
+              {study.metricLabel ? <small>{study.metricLabel}</small> : null}
             </div>
-            <h3>{study.client}</h3>
-            <p>{study.description}</p>
-          </div>
+          ) : null}
+          <Link to="/case-studies" className="text-button">
+            Back to case studies <span>+</span>
+          </Link>
         </div>
       </Reveal>
 

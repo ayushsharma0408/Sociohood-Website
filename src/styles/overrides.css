@@ -2679,3 +2679,77 @@ header nav a[aria-current="page"]::after {
 .case-study-copy p:last-child {
   margin-bottom: 0;
 }
+
+/* Case study detail hero: one centered column, same inset as other page sections */
+main.case-studies-page > .case-hero {
+  padding: 72px max(6%, calc(50vw - 660px)) 48px;
+}
+
+main.case-studies-page > .case-hero .case-hero-copy {
+  max-width: 920px;
+}
+
+main.case-studies-page > .case-hero .eyebrow {
+  margin-bottom: 16px;
+}
+
+main.case-studies-page > .case-hero h1 {
+  max-width: 920px;
+  margin: 0 0 14px;
+  letter-spacing: -2.2px;
+  font-size: clamp(34px, 4.6vw, 56px);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+main.case-studies-page > .case-hero .case-hero-copy > p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+main.case-studies-page > .case-hero .case-hero-copy > .case-hero-client {
+  margin-top: 12px;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+main.case-studies-page > .case-hero .case-hero-metric {
+  margin-top: 18px;
+  padding: 0;
+  letter-spacing: -2px;
+  color: var(--blue);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+main.case-studies-page > .case-hero .case-hero-metric small {
+  display: block;
+  margin-top: 8px;
+  letter-spacing: 0;
+  color: #8491a8;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+main.case-studies-page > .case-hero .text-button {
+  margin-top: 16px;
+}
+
+@media (max-width: 760px) {
+  main.case-studies-page > .case-hero {
+    padding: 36px 6% 40px;
+  }
+
+  main.case-studies-page > .case-hero h1 {
+    letter-spacing: -1.5px;
+    font-size: clamp(30px, 8.5vw, 40px);
+  }
+}
